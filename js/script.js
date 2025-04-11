@@ -58,6 +58,12 @@ function minusOne() {
         );
         console.log(numbersGuesses);
 
+        const uniqueGuesses = new Set(numbersGuesses);
+        if (uniqueGuesses.size !== numbersGuesses.length) {
+          alert("Hai inserito numeri duplicati!");
+          return;
+        }
+
         const numeriComuni = randomNumbers.filter((num) =>
           numbersGuesses.includes(num)
         );
