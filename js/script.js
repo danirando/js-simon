@@ -1,4 +1,4 @@
-let countDownNumber = 30;
+let countDownNumber = 3;
 
 let randomNumbers = [];
 
@@ -30,6 +30,7 @@ const numberFourGuessEl = document.getElementById("NumberGuessFour");
 const numberFiveGuessEl = document.getElementById("NumberGuessFive");
 
 const messageEl = document.getElementById("message");
+const answerEl = document.getElementById("instructions-answer");
 
 function minusOne() {
   if (countDownNumber >= 0) {
@@ -45,6 +46,7 @@ function minusOne() {
       numbersListEl.classList.add("d-none");
       const formEl = document.getElementById("answers-form");
       formEl.classList.remove("d-none");
+      answerEl.classList.remove("d-none");
 
       let numbersGuesses = [];
       formEl.addEventListener("submit", function (event) {
@@ -61,6 +63,7 @@ function minusOne() {
         const uniqueGuesses = new Set(numbersGuesses);
         if (uniqueGuesses.size !== numbersGuesses.length) {
           alert("Hai inserito numeri duplicati!");
+          numbersGuesses = [];
           return;
         }
 
