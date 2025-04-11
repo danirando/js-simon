@@ -1,4 +1,4 @@
-let countDownNumber = 3;
+let countDownNumber = 30;
 
 let randomNumbers = [];
 
